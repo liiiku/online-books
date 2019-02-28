@@ -9,6 +9,9 @@ import { LIST_VIEW, CHART_VIEW } from './utility'
 import { AppContext } from './app-context'
 import Home from './containers/Home'
 
+import Tabs1 from './components/Tabs1'
+import { Tabs, Tab } from './components/Tabs2'
+
 const items = [
   {
     "id": 1,
@@ -82,6 +85,15 @@ class App extends Component {
             onChange={(year, month) => console.log(year, month)}
           />
           <Home name="HOME" />
+          <Tabs1 />
+          <Tabs 
+            activeIndex={0}
+            onTabChange={(index) => console.log(91, index)}
+          >
+            <Tab>标签一</Tab>
+            <Tab>标签二</Tab>
+            <Tab>标签三</Tab>
+          </Tabs>
         </div>
       </AppContext.Provider>
     );
